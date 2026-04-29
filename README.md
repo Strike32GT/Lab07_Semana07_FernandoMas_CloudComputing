@@ -228,7 +228,7 @@ En `web-server-1`:
 ```env
 PORT=8080
 JWT_SECRET=super-secreto-cambiar
-DB_HOST=semana07-db.cwlcwmywsi8h.us-east-1.rds.amazonaws.com
+DB_HOST=ENDPOINT_DE_TU_RDS
 DB_PORT=5432
 DB_NAME=appdb
 DB_USER=appuser
@@ -242,13 +242,19 @@ En `web-server-2`:
 ```env
 PORT=8080
 JWT_SECRET=super-secreto-cambiar
-DB_HOST=semana07-db.cwlcwmywsi8h.us-east-1.rds.amazonaws.com
+DB_HOST=ENDPOINT_DE_TU_RDS
 DB_PORT=5432
 DB_NAME=appdb
 DB_USER=appuser
 DB_PASSWORD=TU_PASSWORD
 DB_SSL=true
 INSTANCE_NAME=web-server-2
+```
+
+Endpoint real usado en esta practica:
+
+```text
+semana07-db.cwlcwmywsi8h.us-east-1.rds.amazonaws.com
 ```
 
 #### 8. Inicializar la base de datos
