@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login + CRUD + Load Balancer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">Semana 07</p>
+        <h1>Demo de Login + CRUD con Balanceo</h1>
+        <p class="subtitle">
+          Inicia sesion para entrar al sistema. Si aun no tienes cuenta, puedes registrarte y
+          luego volver al login.
+        </p>
+        <div class="instance-box">
+          <span>Instancia actual:</span>
+          <strong id="instanceLabel">sin consultar</strong>
+        </div>
+      </section>
+
+      <section id="authSection" class="auth-shell">
+        <article class="card auth-card">
+          <div class="auth-tabs">
+            <button id="showLoginBtn" class="tab-btn active" type="button">Iniciar sesion</button>
+            <button id="showRegisterBtn" class="tab-btn" type="button">Crear cuenta</button>
+          </div>
+
+          <div id="loginPanel">
+            <h2>Bienvenido</h2>
+            <p class="panel-copy">Ingresa con tu correo y contrasena para ver tus tareas.</p>
+            <form id="loginForm">
+              <input id="loginEmail" type="email" placeholder="Email" required />
+              <input id="loginPassword" type="password" placeholder="Password" required />
+              <button type="submit">Ingresar</button>
+            </form>
+            <p class="switch-copy">
+              No tienes cuenta?
+              <button id="goRegisterLink" class="text-btn" type="button">Registrate aqui</button>
+            </p>
+          </div>
+
+          <div id="registerPanel" class="hidden">
+            <h2>Crear cuenta</h2>
+            <p class="panel-copy">Registra tu usuario y luego inicia sesion para entrar.</p>
+            <form id="registerForm">
+              <input id="registerName" placeholder="Nombre" required />
+              <input id="registerEmail" type="email" placeholder="Email" required />
+              <input id="registerPassword" type="password" placeholder="Password" required />
+              <button type="submit">Crear cuenta</button>
+            </form>
+            <p class="switch-copy">
+              Ya tienes cuenta?
+              <button id="goLoginLink" class="text-btn" type="button">Volver al login</button>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="appSection" class="hidden">
+        <section class="card dashboard-head">
+          <div>
+            <h2>Panel de Tareas</h2>
+            <p id="welcomeText" class="panel-copy">Sesion iniciada.</p>
+          </div>
+          <button id="logoutBtn" class="secondary" type="button">Cerrar sesion</button>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <h2>CRUD de Tareas</h2>
+              <p class="section-copy">Administra tus tareas desde un panel simple y ordenado.</p>
+            </div>
+            <button id="refreshBtn" class="ghost-btn" type="button">Refrescar</button>
+          </div>
+          <form id="taskForm" class="task-form task-form-grid">
+            <div class="field-block field-title">
+              <label for="taskTitle">Titulo</label>
+              <input id="taskTitle" placeholder="Ej. Balanceo con Nginx" required />
+            </div>
+            <div class="field-block field-description">
+              <label for="taskDescription">Descripcion</label>
+              <input id="taskDescription" placeholder="Detalle breve de la tarea" />
+            </div>
+            <div class="form-actions">
+              <button id="saveTaskBtn" class="compact-btn" type="submit">Guardar tarea</button>
+            </div>
+          </form>
+          <ul id="taskList" class="task-list"></ul>
+        </section>
+
+        <section class="card">
+          <h2>Estado</h2>
+          <div id="messages" class="messages">Inicia sesion para empezar.</div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "login-crud-load-balancer-demo",
+  "version": "1.0.0",
+  "description": "Demo de login + CRUD con Nginx y multiples backends",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
+  }
+}
